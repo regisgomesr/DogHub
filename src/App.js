@@ -1,15 +1,21 @@
-import React from 'react';
-import './App.css';
+import React, { Component } from 'react'
+import './App.css'
+import { 
+  Route, 
+  BrowserRouter as Router 
+} from 'react-router-dom'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <h1>DogHub</h1>
-        
-      </header>
-    </div>
-  );
+import ListBreeds from './screens/ListBreeds'
+
+class App extends Component {
+  render(){
+    return (
+        <Router>
+            <Route exact path='/list-breeds' component={ListBreeds} />
+        </Router>
+    )
+  }
+  
 }
 
-export default App;
+export default App
