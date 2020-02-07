@@ -1,17 +1,16 @@
 import React, { Component } from 'react'
-import './App.css'
 import { 
   Route, 
   BrowserRouter as Router 
 } from 'react-router-dom'
 
-import ListBreeds from './screens/ListBreeds'
+import Breeds from './screens/Breeds'
 
 class App extends Component {
   render(){
     return (
         <Router>
-            <Route exact path='/list-breeds' component={ListBreeds} />
+            <Route exact path='/breeds' component={Breeds} />
         </Router>
     )
   }

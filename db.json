@@ -1,0 +1,64 @@
+{
+	"breeds": [
+    {
+      "id": 6,
+      "name": "Akita",
+      "image": "./public/images/6.jpg",
+      "life_span": "10 - 14 years",
+      "bred_for": "Hunting bears",
+      "breed_group": "Working",
+      "temperament": "Docile, Alert, Responsive, Dignified, Composed, Friendly, Receptive, Faithful, Courageous",
+      "weight": [{ 
+        "imperial": "65 - 115 lbs", 
+        "metric": "29 - 52 kgs" }],
+      "height": [{
+        "imperial": "24 - 28 inches at the withers",
+        "metric": "61 - 71 cm at the withers"}]
+    },
+    {
+      "id": 16,
+      "name": "American Staffordshire Terrier",
+      "image": "./public/images/16.jpg",
+      "life_span": "12 - 15 years",
+      "bred_for": "",
+      "breed_group": "Terrier",
+      "temperament": "Tenacious, Friendly, Devoted, Loyal, Attentive, Courageous",
+      "weight": [{ 
+        "imperial": "50 - 60 lbs", 
+        "metric": "23 - 27 kgs" }],
+      "height": [{
+        "imperial": "17 - 19 inches at the withers",
+        "metric": "43 - 48 cm at the withers"}]
+    },
+    {
+      "id": 81,
+      "name": "Chow Chow",
+      "image": "./public/images/81.jpg",
+      "life_span": "12 - 15 years",
+      "bred_for": "Guardian, cart pulling, hunting",
+      "breed_group": "Non-Sporting",
+      "temperament": "Aloof, Loyal, Independent, Quiet",
+      "weight": [{ 
+        "imperial": "40 - 70 lbs", 
+        "metric": "18 - 32 kgs" }],
+      "height": [{
+        "imperial": "17 - 20 inches at the withers",
+        "metric": "43 - 51 cm at the withers"}]
+    },
+    {
+      "id": 121,
+      "name": "Golden Retriever",
+      "image": "./public/images/121.jpg",
+      "life_span": "10 - 12 years",
+      "bred_for": "Retrieving",
+      "breed_group": "Sporting",
+      "temperament": "Intelligent, Kind, Reliable, Friendly, Trustworthy, Confident",
+      "weight": [{ 
+        "imperial": "55 - 75 lbs", 
+        "metric": "25 - 34 kgs" }],
+      "height": [{
+      "imperial": "21.5 - 24 inches at the withers",
+      "metric": "55 - 61 cm at the withers"}]
+    }
+  ]
+}
