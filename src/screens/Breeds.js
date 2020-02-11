@@ -2,18 +2,18 @@ import React, { Component } from 'react'
 import {   
     CardDeck, Card, CardImg, CardBody, CardLink,  Button, Container, Row
     } from 'reactstrap'
-    import ActionCreators from '../redux/actionCreators'
-    import { connect } from 'react-redux'
+import ActionCreators from '../redux/actionCreators'
+import { connect } from 'react-redux'
+import Header from '../Header'
+
 
 class Breeds extends Component{
 
     componentDidMount() {
         this.props.load()
-        console.log(this.props)
     }
 
     renderBreeds = breed => {
-        console.log(breed)
         return(
             <div className="card" key={breed.id}>
 
@@ -37,6 +37,7 @@ class Breeds extends Component{
         return(
 
             <div className='adocao-container'>
+                <Header />
                 <h1>Para adoção</h1>
                 {
                     this.props.breeds.isLoading &&
@@ -55,7 +56,6 @@ class Breeds extends Component{
                     </Container>        
                 }
             </div>
-            
         )
     }
 }

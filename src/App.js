@@ -10,8 +10,7 @@ import { Container } from 'reactstrap'
 
 import Breeds from './screens/Breeds'
 import Details from './screens/Details'
-
-const Home = props => <h1>Home</h1>
+import Home from './screens/Home'
 
 class App extends Component {
   render(){
@@ -26,7 +25,6 @@ class App extends Component {
           </Container>
         </Router>
       </Provider>
-      
     )
   }
 }

@@ -2,8 +2,9 @@ import React, { Component } from 'react'
 import {   
     CardDeck, Card, CardImg, CardBody, CardText,  Button, Container, Row
     } from 'reactstrap'
-    import ActionCreators from '../redux/actionCreators'
-    import { connect } from 'react-redux'
+import ActionCreators from '../redux/actionCreators'
+import { connect } from 'react-redux'
+import Header from '../Header'
 
 class Details extends Component{
 
@@ -22,7 +23,6 @@ class Details extends Component{
             height: this.props.breed.height.metric
         })
         this.props.load()
-        
     }
 
     renderBreed = breed => {
@@ -48,8 +48,9 @@ class Details extends Component{
     render(){
 
         return(
-
             <div className='detalhes-container'>
+
+                <Header />
                 <h1>Detalhes</h1>
                 {
                     this.props.breed.isLoading &&
@@ -64,7 +65,6 @@ class Details extends Component{
                     </Container>        
                 }
             </div>
-            
         )
     }
 }
