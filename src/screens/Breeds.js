@@ -1,51 +1,33 @@
 import React, { Component } from 'react'
-import api from '../services/api'
 import {   
-    Card, CardImg, CardText, CardBody,
-    CardTitle, CardSubtitle, Button, Col, Container, Row
+    CardDeck, Card, CardImg, CardBody, CardLink,  Button, Container, Row
     } from 'reactstrap'
+    import ActionCreators from '../redux/actionCreators'
+    import { connect } from 'react-redux'
 
 class Breeds extends Component{
 
-    constructor(props){
-        super(props)
-
-        this.state = {
-            isLoading: false,
-            breeds: []
-        }
-
-        this.renderBreeds = this.renderBreeds.bind(this)
-        this.loadData = this.loadData.bind(this)
-    }
-
     componentDidMount() {
-        this.loadData()
+        this.props.load()
+        console.log(this.props)
     }
 
-    loadData(){
-        this.setState({ isLoading: true })
-        api.loadBreeds(this.props.match.params.breed).then((res) => {
-            this.setState({
-                isLoading: false,
-                breeds: res.data
-            })
-        })
-    }
-
-    renderBreeds = (breeds) => {
+    renderBreeds = breed => {
+        console.log(breed)
         return(
-            <div key={breeds.id}>
-            <div>
-            <Card>
-              <CardImg top width="180px" height="318px" src='http://placehold.it/318x180/000/fff' alt="Card image" />
-              <CardBody>
-                <CardTitle>{breeds.name}</CardTitle>
-                <CardSubtitle>{breeds.temperament}</CardSubtitle>
-                <Button>Button</Button>
-              </CardBody>
-            </Card>
-          </div>
+            <div className="card" key={breed.id}>
+
+                <CardDeck>
+                    <Card className='card-container'>
+                    <CardImg top src='http://placehold.it/318x180/000/fff' alt="Card image" />
+                    <CardBody>
+                        <h5 className='CardTitle'>{breed.name}</h5>
+                        <Button className='CardButton' disabled>{breed.temperament}</Button>
+                        <br/>
+                        <CardLink href="/details">Detalhes</CardLink>
+                    </CardBody>
+                    </Card>
+                </CardDeck>
             </div>
         )
     }
@@ -54,21 +36,21 @@ class Breeds extends Component{
 
         return(
 
-            <div>
+            <div className='adocao-container'>
                 <h1>Para adoção</h1>
                 {
-                    this.state.isLoading &&
+                    this.props.breeds.isLoading &&
                     <p>Carregando, aguarde...</p>
                 }
                 {
-                    !this.state.isLoading && this.state.breeds.length === 0 &&
+                    !this.props.breeds.isLoading && this.props.breeds.data.length === 0 &&
                     <div className='alert alert-info'>Nenhuma Raça cadastrada!</div>
                 }
 
-                { !this.state.isLoading && this.state.breeds.length > 0 &&
+                { !this.props.breeds.isLoading && this.props.breeds.data.length > 0 &&
                     <Container fluid>
                         <Row>
-                            { this.state.breeds.map(this.renderBreeds) }
+                            { this.props.breeds.data.map(this.renderBreeds) }
                         </Row>
                     </Container>        
                 }
@@ -77,4 +59,17 @@ class Breeds extends Component{
         )
     }
 }
-export default Breeds
+
+const mapStateToProps = state => {
+    return {
+        breeds: state.breeds
+    }
+}
+
+const mapDispatchToProps = dispatch => {
+    return {
+        load: () => dispatch(ActionCreators.getBreedsRequest())
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Breeds)

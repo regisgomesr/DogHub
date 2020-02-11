@@ -1,13 +1,20 @@
 import axios from 'axios'
 
-const api = axios.create({
-    baseURL: 'http://localhost:3000/'
-})
+const Api = base => {
 
-export const loadBreeds = () => api.get('breeds')
+    const client = axios.create({
+        baseURL: base
+    })
 
-const apis = {
-    loadBreeds: loadBreeds
+   
+
+    const get = endpoint => client.get(endpoint)
+
+    return {
+        getBreed: id => get(`/breeds/${id}`),
+        getBreeds: () => get(`/breeds`)
+    }
+
 }
 
-export default apis
+export default Api
