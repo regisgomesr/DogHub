@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
+import './Header.css'
+
 import { 
-    Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink, style } 
+    Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } 
     from 'reactstrap'
 
 const Header = props => {
@@ -9,8 +11,8 @@ const Header = props => {
     const toggleNavbar = () => setCollapsed(!collapsed)
 
     return(
-        <div>
-            <Navbar color="light" light expand="md">
+        <div className='header-container'>
+            <Navbar light expand="md">
                 <NavbarBrand href="/" className="mr-auto">DOGHUB</NavbarBrand>
                 <NavbarToggler onClick={toggleNavbar} className="mr-2" />
                 <Collapse isOpen={!collapsed} navbar>
