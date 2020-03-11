@@ -1,29 +1,55 @@
-import React, { useState } from 'react'
+import React, { Component } from 'react'
+
+import { MdAccountBalance } from 'react-icons/md';
+
 import './Header.css'
 
-import { 
-    Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } 
-    from 'reactstrap'
+class Header extends Component {
 
-const Header = props => {
+    constructor() {
+        super()
+        this.state={
+            showMe: false
+        }
+    }
+    
+    toggleMenu() {
+        this.setState({
+            showMe:!this.state.showMe
+        })
+        
+    }
 
-    const [collapsed, setCollapsed] = useState(true)
-    const toggleNavbar = () => setCollapsed(!collapsed)
-
-    return(
-        <div className='header-container'>
-            <Navbar light expand="md">
-                <NavbarBrand href="/" className="mr-auto">DOGHUB</NavbarBrand>
-                <NavbarToggler onClick={toggleNavbar} className="mr-2" />
-                <Collapse isOpen={!collapsed} navbar>
-                <Nav navbar>
-                    <NavItem>
-                        <NavLink href="/breeds">Raças</NavLink>
-                    </NavItem>
-                </Nav>
-                </Collapse>
-            </Navbar>
-        </div>
-    )
+    render() {
+        return(
+            <header className='header'>
+    
+                <div className='menu-logo'>
+                    <a href='/'><span>Dog</span>Hub</a>
+                </div>
+    
+                <button className='btn-menu' onClick={ () => this.toggleMenu() } ><MdAccountBalance size={24} color='#FFF' /></button>
+    
+                { this.state.showMe ? 
+    
+                    <div className='menu'>
+                        <nav className='menu-nav'>
+                            <a className='btn-close' onClick={ () => this.toggleMenu() }>x</a>
+                            <ul>
+                                <li><a href='/'>Home</a></li>
+                                <li><a href='/Breeds'>Raças</a></li>
+                            </ul>
+                        </nav>
+    
+                    </div>
+    
+                : null
+                }
+                
+            </header>
+            
+        )
+    }
+    
 }
 export default Header

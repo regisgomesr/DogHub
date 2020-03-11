@@ -8,7 +8,7 @@ const Home = props => {
         
         <div className='home-container'>
             <Header />    
-            <h1>Seja bem-vindo!</h1>
+            
         </div>
     )
 }
