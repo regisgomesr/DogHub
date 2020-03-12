@@ -1,0 +1,70 @@
+.container {
+    width: 100%;
+    padding-right: 0;
+    padding-left: 0;
+    margin-right: 0;
+    margin-left: 0;
+}
+
+.adocao-container {
+    display: flex;
+    width: 100%;
+    background: radial-gradient(#e5e5e5, #ffff, #e5e5e5);
+}
+
+.container-fluid {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 25%;
+    align-items: center;
+    
+}
+
+.container-fluid h1{
+    width: 100%;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+.div-card {
+    width: 100%;
+}
+
+.card-container {
+    width: 300px;
+    display: flex;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    margin-bottom: 4%;
+    border-radius: 5%;
+    box-shadow: 3px 5px 10px 1px rgba(0,0,0,0.253) !important;
+}
+
+.card-container:hover {
+    box-shadow: 5px 10px 20px 1px rgba(0,0,0,0.253) !important;
+}
+
+.card-container .card-img {
+    border-top-left-radius: 5%;
+    border-top-right-radius: 5%;
+}
+
+.btn {
+    margin-top: 3%;
+    width: 100%;
+}
+
+.overflow {
+    overflow: hidden;
+}
+
+.card-img {
+    transform: scale(1);
+}
+
+.card-img:hover {
+    transform: scale(1.8);
+    overflow: hidden;
+}

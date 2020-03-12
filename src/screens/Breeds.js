@@ -6,6 +6,10 @@ import ActionCreators from '../redux/actionCreators'
 import { connect } from 'react-redux'
 import Header from '../Header'
 
+import './Breeds.css'
+
+import dog6 from '../assets/dog6.jpg'
+
 
 class Breeds extends Component{
 
@@ -15,19 +19,20 @@ class Breeds extends Component{
 
     renderBreeds = breed => {
         return(
-            <div className="card" key={breed.id}>
+            <div className="div-card" key={breed.id}>
 
-                <CardDeck>
                     <Card className='card-container'>
-                    <CardImg top src='http://placehold.it/318x180/000/fff' alt="Card image" />
-                    <CardBody>
-                        <h5 className='CardTitle'>{breed.name}</h5>
-                        <Button className='CardButton' disabled>{breed.temperament}</Button>
-                        <br/>
-                        <CardLink href="/details">Detalhes</CardLink>
-                    </CardBody>
+                        <div className='overflow'>
+                        <CardImg className='card-img' top width='100%' src={dog6} alt="Card image" />
+                        </div>
+                        <CardBody>
+                            <h5 className='CardTitle'>{breed.name}</h5>
+                            <Button className='CardButton' disabled>{breed.temperament}</Button>
+                            <br/>
+                            <a href="/details" className='btn btn-outline-success'>Detalhes</a>
+                        </CardBody>
                     </Card>
-                </CardDeck>
+                
             </div>
         )
     }
@@ -38,7 +43,7 @@ class Breeds extends Component{
 
             <div className='adocao-container'>
                 <Header />
-                <h1>Para adoção</h1>
+                
                 {
                     this.props.breeds.isLoading &&
                     <p>Carregando, aguarde...</p>
@@ -49,7 +54,9 @@ class Breeds extends Component{
                 }
 
                 { !this.props.breeds.isLoading && this.props.breeds.data.length > 0 &&
-                    <Container fluid>
+                    <Container fluid className='container-fluid d-flex justify-content-center'>
+
+                        <h1>Para adoção</h1>
                         <Row>
                             { this.props.breeds.data.map(this.renderBreeds) }
                         </Row>
