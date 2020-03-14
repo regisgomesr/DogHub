@@ -2,30 +2,16 @@ import React, { Component } from 'react'
 import {   
     CardDeck, Card, CardImg, CardBody, CardText,  Button, Container, Row
     } from 'reactstrap'
-import ActionCreators from '../redux/actionCreators'
+import ActionCreators from '../../redux/actionCreators'
 import { connect } from 'react-redux'
-import Header from '../Header'
 
-class Details extends Component{
-
-    state = {
-        name: '',
-        temperament: '',
-        weight: '',
-        height: ''
-    }
+class DetailsBreed extends Component{
 
     componentDidMount() {
-        this.setState({
-            name: this.props.breed.name,
-            temperament: this.props.breed.temperament,
-            weight: this.props.breed.weight.metric,
-            height: this.props.breed.height.metric
-        })
-        this.props.load()
+        this.props.load(this.props.match.params.id)
     }
 
-    renderBreed = breed => {
+    renderBreed = (breed) => {
         return(
             <div className="card" key={breed.id}>
 
@@ -33,10 +19,10 @@ class Details extends Component{
                     <Card className='card-container'>
                     <CardImg top src='http://placehold.it/318x180/000/fff' alt="Card image" />
                     <CardBody>
-                        <h5 className='CardTitle'>{this.state.name}</h5>
-                        <Button className='CardButton' disabled>{this.state.temperament}</Button>
-                        <CardText>{this.state.weight}</CardText>
-                        <CardText>{this.state.height}</CardText>
+                        <h5 className='CardTitle'>{breed.name}</h5>
+                        <Button className='CardButton' disabled>{breed.temperament}</Button>
+                        <CardText>{breed.weight}</CardText>
+                        <CardText>{breed.height}</CardText>
                         <Button className='CardButton'>Adotar</Button>
                     </CardBody>
                     </Card>
@@ -49,18 +35,17 @@ class Details extends Component{
 
         return(
             <div className='detalhes-container'>
-
-                <Header />
+            
                 <h1>Detalhes</h1>
                 {
-                    this.props.breed.isLoading &&
+                    this.props.breeds.isLoading &&
                     <p>Carregando, aguarde...</p>
                 }
 
-                { !this.props.breed.isLoading &&
+                { !this.props.breeds.isLoading &&
                     <Container fluid>
                         <Row>
-                            { this.props.breed.data.map(this.renderBreed) }
+                            { this.props.breeds.data.map(this.renderBreed) }
                         </Row>
                     </Container>        
                 }
@@ -71,7 +56,7 @@ class Details extends Component{
 
 const mapStateToProps = state => {
     return {
-        breed: state.breed
+        breeds: state.breeds
     }
 }
 
@@ -81,4 +66,4 @@ const mapDispatchToProps = dispatch => {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Details)
+export default connect(mapStateToProps, mapDispatchToProps)(DetailsBreed)

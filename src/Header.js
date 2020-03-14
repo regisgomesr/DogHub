@@ -37,7 +37,7 @@ class Header extends Component {
                             <a className='btn-close' onClick={ () => this.toggleMenu() }>x</a>
                             <ul>
                                 <li><a href='/'>Home</a></li>
-                                <li><a href='/Breeds'>Raças</a></li>
+                                <li><a href='/breed'>Raças</a></li>
                             </ul>
                         </nav>
     

@@ -1,15 +1,12 @@
 import React, { Component } from 'react'
-import {   
-    CardDeck, Card, CardImg, CardBody, CardLink,  Button, Container, Row
-    } from 'reactstrap'
-import ActionCreators from '../redux/actionCreators'
+import { Link } from 'react-router-dom'
+import ActionCreators from '../../redux/actionCreators'
 import { connect } from 'react-redux'
-import Header from '../Header'
+import {   
+    Card, CardImg, CardBody,  Button, Container, Row
+    } from 'reactstrap'
 
 import './Breeds.css'
-
-import dog6 from '../assets/6.jpg'
-
 
 class Breeds extends Component{
 
@@ -29,7 +26,7 @@ class Breeds extends Component{
                             <h5 className='CardTitle'>{breed.name}</h5>
                             <Button className='CardButton' disabled>{breed.temperament}</Button>
                             <br/>
-                            <a href="/details" className='btn btn-outline-success'>Detalhes</a>
+                            <Link to={`/breeds/${breed.id}/details`} className='btn btn-outline-success'>Detalhes</Link>
                         </CardBody>
                     </Card>
                 
@@ -42,7 +39,6 @@ class Breeds extends Component{
         return(
 
             <div className='adocao-container'>
-                <Header />
                 
                 {
                     this.props.breeds.isLoading &&

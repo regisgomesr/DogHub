@@ -8,9 +8,9 @@ import {
 
 import { Container } from 'reactstrap'
 
-import Breeds from './screens/Breeds'
-import Details from './screens/Details'
 import Home from './screens/Home'
+import Breed from './screens/Breed'
+
 
 class App extends Component {
   render(){
@@ -20,8 +20,7 @@ class App extends Component {
         <Router>
           <Container>
             <Route exact path='/' component={Home} />
-            <Route exact path='/breeds' component={Breeds} />
-            <Route exact path='/details' component={Details} />
+            <Route exact path='/breed' component={Breed} />
           </Container>
         </Router>
       </Provider>
