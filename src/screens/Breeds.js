@@ -8,7 +8,7 @@ import Header from '../Header'
 
 import './Breeds.css'
 
-import dog6 from '../assets/dog6.jpg'
+import dog6 from '../assets/6.jpg'
 
 
 class Breeds extends Component{
@@ -23,7 +23,7 @@ class Breeds extends Component{
 
                     <Card className='card-container'>
                         <div className='overflow'>
-                        <CardImg className='card-img' top width='100%' src={dog6} alt="Card image" />
+                            <CardImg className='card-img' top width='100%' src={breed.image} alt="Card image" />
                         </div>
                         <CardBody>
                             <h5 className='CardTitle'>{breed.name}</h5>

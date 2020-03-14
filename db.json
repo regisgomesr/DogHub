@@ -3,7 +3,7 @@
     {
       "id": 6,
       "name": "Akita",
-      "image": "./public/images/6.jpg",
+      "image": "https://dochub.com/regisgomes/eBypnPP/6-jpg",
       "life_span": "10 - 14 years",
       "bred_for": "Hunting bears",
       "breed_group": "Working",
@@ -18,7 +18,7 @@
     {
       "id": 16,
       "name": "American Staffordshire Terrier",
-      "image": "./public/images/16.jpg",
+      "image": "https://dochub.com/regisgomes/9YNMR6P/16-jpg",
       "life_span": "12 - 15 years",
       "bred_for": "",
       "breed_group": "Terrier",
@@ -33,7 +33,7 @@
     {
       "id": 81,
       "name": "Chow Chow",
-      "image": "./public/images/81.jpg",
+      "image": "https://dochub.com/regisgomes/orxl2yN/81-jpg",
       "life_span": "12 - 15 years",
       "bred_for": "Guardian, cart pulling, hunting",
       "breed_group": "Non-Sporting",
@@ -48,7 +48,7 @@
     {
       "id": 121,
       "name": "Golden Retriever",
-      "image": "./public/images/121.jpg",
+      "image": "https://dochub.com/regisgomes/O6VrwVp/121-jpg",
       "life_span": "10 - 12 years",
       "bred_for": "Retrieving",
       "breed_group": "Sporting",
