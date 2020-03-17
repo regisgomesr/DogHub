@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 import {   
     CardDeck, Card, CardImg, CardBody, CardText,  Button, Container, Row
     } from 'reactstrap'
@@ -7,38 +8,41 @@ import { connect } from 'react-redux'
 
 class DetailsBreed extends Component{
 
+    state = {
+        name: '',
+        temperament: ''
+    }
+
     componentDidMount() {
         this.props.load(this.props.match.params.id)
-        console.log(this.props.match.params.id)
         
     }
 
-    renderDetails = breed => {
-        console.log(breed)
-        return(
-            <div className="card">
+    static getDerivedStateFromProps(newProps, prevState){
 
-                            <CardDeck>
-                                <Card className='card-container'>
-                                <CardImg top src='http://placehold.it/318x180/000/fff' alt="Card image" />
-                                <CardBody>
-                                    <h5 className='CardTitle'>{breed.name}</h5>
-                                    <Button className='CardButton' disabled>{breed.temperament}</Button>
-                                    <CardText>{breed.weight}</CardText>
-                                    <CardText>{breed.height}</CardText>
-                                    <Button className='CardButton'>Adotar</Button>
-                                </CardBody>
-                                </Card>
-                            </CardDeck>
-                        </div>
-        )
+        console.log(newProps, prevState)
+        if(newProps.breeds && newProps.breeds.breed  &&
+            (prevState.name === undefined || prevState.name === '')) {
+            const breed = {}
+            const newValue = newProps.breeds.breed
+
+            if(newValue.name !== prevState.name){
+                breed.name = newProps.breeds.breed.name
+            }
+
+            if(newValue.temperament !== prevState.temperament){
+                breed.temperament = newProps.breeds.breed.temperament
+            }
+
+
+            return breed
+        }
+
+        return null
     }
 
     
-
     render(){
-
-        console.log(this.props.breeds.data)
 
         return(
             <div className='detalhes-container'>
@@ -50,10 +54,25 @@ class DetailsBreed extends Component{
                 }
 
                 { !this.props.breeds.isLoading &&
-                    <Container fluid>
+                    <Container fluid className='container-fluid d-flex justify-content-center'>
                         <h1>Detalhes</h1>
                         <Row>
-                            { this.props.breeds.data.map(this.renderDetails) }
+                            <div className="card">
+
+                                
+                                    <Card className='card-container'>
+                                    <div className='overflow'>
+                                        <CardImg className='card-img' top width='100%' src={this.state.image} alt="Card image" />
+                                    </div>
+                                    <CardBody>
+                                        <h5 className='CardTitle'>{this.state.name}</h5>
+                                        <Button className='CardButton' disabled>{this.state.temperament}</Button>
+                                        <br/>
+                                        <Link className='btn btn-outline-success' to={`breeds/adotar`}>Adotar</Link>
+                                    </CardBody>
+                                    </Card>
+                                
+                            </div>
                         </Row>
                         
                     </Container>        

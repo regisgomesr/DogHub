@@ -8,12 +8,14 @@ import DetailsBreed from './DetailsBreed'
 
 const Index = props => {
 
+    console.log(props)
+
     return(
 
         <div>
             <Header />
-            <Breeds />
-            <Route exact path={`${props.match.path}/breeds/:id/details`} component={DetailsBreed} />
+            <Route exact path={`/breeds`} component={Breeds} />
+            <Route exact path={`${props.match.path}/:id/details`} component={DetailsBreed} />
         </div>
     )
 }

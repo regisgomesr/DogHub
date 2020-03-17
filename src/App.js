@@ -20,7 +20,7 @@ class App extends Component {
         <Router>
           <Container>
             <Route exact path='/' component={Home} />
-            <Route exact path='/breeds' component={Breeds} />
+            <Route path='/breeds' component={Breeds} />
           </Container>
         </Router>
       </Provider>

@@ -15,7 +15,6 @@ class Breeds extends Component{
     }
 
     renderBreeds = breed => {
-        console.log(breed)
         return(
             <div className="div-card" key={breed.id}>
 
