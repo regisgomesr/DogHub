@@ -6,14 +6,14 @@ import Header from '../../Header'
 import Breeds from './Breeds'
 import DetailsBreed from './DetailsBreed'
 
-const Breed = props => {
+const Index = props => {
 
     return(
 
         <div>
             <Header />
             <Breeds />
-            <Route path={`${props.match.path}/breeds/:id/details`} exact component={DetailsBreed} />
+            <Route exact path={`${props.match.path}/breeds/:id/details`} component={DetailsBreed} />
         </div>
     )
 }
@@ -24,4 +24,4 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps)(Breed)
+export default connect(mapStateToProps)(Index)

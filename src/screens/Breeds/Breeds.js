@@ -15,6 +15,7 @@ class Breeds extends Component{
     }
 
     renderBreeds = breed => {
+        console.log(breed)
         return(
             <div className="div-card" key={breed.id}>
 
@@ -26,7 +27,7 @@ class Breeds extends Component{
                             <h5 className='CardTitle'>{breed.name}</h5>
                             <Button className='CardButton' disabled>{breed.temperament}</Button>
                             <br/>
-                            <Link to={`/breeds/${breed.id}/details`} className='btn btn-outline-success'>Detalhes</Link>
+                            <Link className='btn btn-outline-success' to={`breeds/${breed.id}/details`}>Detalhes</Link>
                         </CardBody>
                     </Card>
                 
