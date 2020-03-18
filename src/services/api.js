@@ -7,10 +7,13 @@ const Api = base => {
     })
 
     const get = endpoint => client.get(endpoint)
+    const create = (endpoint, data) => client.post(endpoint, data)
 
     return {
         getBreed: id => get(`/breeds/${id}`),
-        getBreeds: () => get(`/breeds`)
+        getBreeds: () => get(`/breeds`),
+
+        createAdoption: data => create(`/adoptions/`, data),
     }
 }
 export default Api

@@ -1,16 +1,21 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
 import {   
-    CardDeck, Card, CardImg, CardBody, CardText,  Button, Container, Row
+    Card, CardSubtitle, CardImg, CardBody, CardText,  Button, Container, Row
     } from 'reactstrap'
 import ActionCreators from '../../redux/actionCreators'
 import { connect } from 'react-redux'
+import { Redirect } from 'react-router-dom'
+
+import './DetailsBreed.css'
 
 class DetailsBreed extends Component{
 
     state = {
         name: '',
-        temperament: ''
+        temperament: '',
+        image: '',
+        life_span: '',
+        breed_group: ''
     }
 
     componentDidMount() {
@@ -21,6 +26,7 @@ class DetailsBreed extends Component{
     static getDerivedStateFromProps(newProps, prevState){
 
         console.log(newProps, prevState)
+
         if(newProps.breeds && newProps.breeds.breed  &&
             (prevState.name === undefined || prevState.name === '')) {
             const breed = {}
@@ -34,6 +40,17 @@ class DetailsBreed extends Component{
                 breed.temperament = newProps.breeds.breed.temperament
             }
 
+            if(newValue.image !== prevState.image){
+                breed.image = newProps.breeds.breed.image
+            }
+
+            if(newValue.life_span !== prevState.life_span){
+                breed.life_span = newProps.breeds.breed.life_span
+            }
+
+            if(newValue.breed_group !== prevState.breed_group){
+                breed.breed_group = newProps.breeds.breed.breed_group
+            }
 
             return breed
         }
@@ -41,13 +58,23 @@ class DetailsBreed extends Component{
         return null
     }
 
-    
+    handleSave = () => {
+
+        this.props.create({
+            image: this.state.image,
+            name: this.state.name
+        })
+    }
+
     render(){
+
+        if(this.props.adoptions.saved) {
+            return <Redirect to='/adoptions' />
+        }
 
         return(
             <div className='detalhes-container'>
             
-                
                 {
                     this.props.breeds.isLoading &&
                     <p>Carregando, aguarde...</p>
@@ -57,24 +84,21 @@ class DetailsBreed extends Component{
                     <Container fluid className='container-fluid d-flex justify-content-center'>
                         <h1>Detalhes</h1>
                         <Row>
-                            <div className="card">
-
-                                
-                                    <Card className='card-container'>
+                            <div className="div-card">
+                                <Card className='card-container'>
                                     <div className='overflow'>
                                         <CardImg className='card-img' top width='100%' src={this.state.image} alt="Card image" />
                                     </div>
                                     <CardBody>
                                         <h5 className='CardTitle'>{this.state.name}</h5>
                                         <Button className='CardButton' disabled>{this.state.temperament}</Button>
-                                        <br/>
-                                        <Link className='btn btn-outline-success' to={`breeds/adotar`}>Adotar</Link>
+                                        <CardSubtitle className='subTitle'> - Age {this.state.life_span}</CardSubtitle>
+                                        <CardText> - Group {this.state.breed_group}</CardText>
+                                        <Button onClick={this.handleSave} color='secondary' className='btn'>Adotar</Button>
                                     </CardBody>
-                                    </Card>
-                                
+                                </Card>
                             </div>
                         </Row>
-                        
                     </Container>        
                 }
             </div>
@@ -84,13 +108,15 @@ class DetailsBreed extends Component{
 
 const mapStateToProps = state => {
     return {
-        breeds: state.breeds
+        breeds: state.breeds,
+        adoptions: state.adoptions
     }
 }
 
 const mapDispatchToProps = dispatch => {
     return {
-        load: id => dispatch(ActionCreators.getBreedRequest(id))
+        load: id => dispatch(ActionCreators.getBreedRequest(id)),
+        create: (adoption) => dispatch(ActionCreators.createAdoptionRequest(adoption))
     }
 }
 

@@ -11,7 +11,11 @@ export const {
 
     getBreedRequest: ['id'],
     getBreedSuccess: ['breed'],
-    getBreedFailure: null
+    getBreedFailure: null,
+
+    createAdoptionRequest: ['adoption'],
+    createAdoptionSuccess: ['adoption'],
+    createAdoptionFailure: ['error'],
 
 })
 export default Creators
