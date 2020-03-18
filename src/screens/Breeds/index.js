@@ -17,7 +17,7 @@ const Index = props => {
             <Header />
             <Route exact path={`/breeds`} component={Breeds} />
             <Route exact path={`${props.match.path}/:id/details`} component={DetailsBreed} />
-            <Route exact path={`/adoptions`} component={Adoptions} />
+            <Route exact path={`${props.match.path}/adoptions`} component={Adoptions} />
         </div>
     )
 }
