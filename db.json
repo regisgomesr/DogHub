@@ -62,18 +62,12 @@
     }
   ],
 
-    "adoptions": [
-      {
-        "id": 121,
-        "name": "Golden Retriever",
-        "image": "https://i.imgur.com/BZH1Wkt.jpg"
-      },
-      {
-        "id": 121,
-        "name": "Golden Retriever",
-        "image": "https://i.imgur.com/BZH1Wkt.jpg"
-      }
-    ]
-  
+  "adoptions": [
+    {
+      "id": 121,
+      "name": "Golden Retriever",
+      "image": "https://i.imgur.com/BZH1Wkt.jpg"
+    }
+  ]
 
 }

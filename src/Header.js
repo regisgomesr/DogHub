@@ -38,6 +38,7 @@ class Header extends Component {
                             <ul>
                                 <li><a href='/'>Home</a></li>
                                 <li><a href='/breeds'>Raças</a></li>
+                                <li><a href='/adoptions'>Adoções</a></li>
                             </ul>
                         </nav>
     

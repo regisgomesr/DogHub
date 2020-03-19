@@ -19,6 +19,11 @@
     justify-content: center;
 }
 
+.adoption-container Header {
+    position: fixed;
+    top: 0;
+}
+
 
 .adoption-container h3{
     width: 100%;

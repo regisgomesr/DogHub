@@ -13,9 +13,15 @@ export const {
     getBreedSuccess: ['breed'],
     getBreedFailure: null,
 
+    getAdoptionsRequest: null,
+    getAdoptionsSuccess: ['adoptions'],
+    getAdoptionsFailure: null,
+
     createAdoptionRequest: ['adoption'],
     createAdoptionSuccess: ['adoption'],
-    createAdoptionFailure: ['error'],
+    createAdoptionFailure: ['error']
+
+ 
 
 })
 export default Creators

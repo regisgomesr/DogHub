@@ -13,7 +13,8 @@ const Api = base => {
         getBreed: id => get(`/breeds/${id}`),
         getBreeds: () => get(`/breeds`),
 
-        createAdoption: data => create(`/breeds/adoptions/`, data),
+        createAdoption: data => create(`/adoptions/`, data),
+        getAdoptions: () => get(`/adoptions`)
     }
 }
 export default Api

@@ -10,6 +10,7 @@ import { Container } from 'reactstrap'
 
 import Home from './screens/Home'
 import Breeds from './screens/Breeds'
+import Adoptions from './screens/Adoptions'
 
 
 class App extends Component {
@@ -21,6 +22,7 @@ class App extends Component {
           <Container>
             <Route exact path='/' component={Home} />
             <Route path='/breeds' component={Breeds} />
+            <Route path='/adoptions' component={Adoptions} />
           </Container>
         </Router>
       </Provider>

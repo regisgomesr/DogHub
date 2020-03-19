@@ -91,7 +91,7 @@ class DetailsBreed extends Component{
                                         <Button className='CardButton' disabled>{this.state.temperament}</Button>
                                         <CardSubtitle className='subTitle'> - Age {this.state.life_span}</CardSubtitle>
                                         <CardText> - Group {this.state.breed_group}</CardText>
-                                        <Button href='/breeds/adoptions' color='secondary' className='btn'>Adotar</Button>
+                                        <Button href='/adoptions' color='secondary' className='btn'>Adotar</Button>
                                     </CardBody>
                                 </Card>
                             </div>

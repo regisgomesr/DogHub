@@ -7,6 +7,7 @@ export const INITIAL_STATE = {
     isSaving: false,
     saved: false,
     data: [],
+    adoption: {},
     error: ''
 }
 
@@ -37,11 +38,35 @@ export const createAdoptionFailure = (state = INITIAL_STATE, action) => {
     }
 }
 
+export const getAdoptionsRequest = (state = INITIAL_STATE, action) => {
+    return {
+        ...state,
+        isLoading: true
+    }
+}
+export const getAdoptionsSuccess = (state = INITIAL_STATE, action) => {
+    return {
+        ...state,
+        isLoading: false,
+        data: action.adoptions
+    }
+}
+export const getAdoptionsFailure = (state = INITIAL_STATE, action) => {
+    return {
+        ...state,
+        isLoading: false
+    }
+}
+
 
 export const HANDLERS = {
     [Types.CREATE_ADOPTION_REQUEST]: createAdoptionRequest,
     [Types.CREATE_ADOPTION_SUCCESS]: createAdoptionSuccess,
     [Types.CREATE_ADOPTION_FAILURE]: createAdoptionFailure,
+
+    [Types.GET_ADOPTIONS_REQUEST]: getAdoptionsRequest,
+    [Types.GET_ADOPTIONS_SUCCESS]: getAdoptionsSuccess,
+    [Types.GET_ADOPTIONS_FAILURE]: getAdoptionsFailure
 
 }
 export default createReducer(INITIAL_STATE, HANDLERS)

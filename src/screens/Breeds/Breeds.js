@@ -38,7 +38,7 @@ class Breeds extends Component{
 
         return(
 
-            <div className='adocao-container'>
+            <div className='breeds-container'>
                 
                 {
                     this.props.breeds.isLoading &&
