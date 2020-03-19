@@ -13,7 +13,7 @@ const Index = props => {
 
     return(
 
-        <div>
+        <div className='div'>
             <Header />
             <Route exact path={`/breeds`} component={Breeds} />
             <Route exact path={`${props.match.path}/:id/details`} component={DetailsBreed} />
