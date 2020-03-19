@@ -60,5 +60,20 @@
         "imperial": "21.5 - 24 inches at the withers",
         "metric": "55 - 61 cm at the withers"}]
     }
-  ]
+  ],
+
+    "adoptions": [
+      {
+        "id": 121,
+        "name": "Golden Retriever",
+        "image": "https://i.imgur.com/BZH1Wkt.jpg"
+      },
+      {
+        "id": 121,
+        "name": "Golden Retriever",
+        "image": "https://i.imgur.com/BZH1Wkt.jpg"
+      }
+    ]
+  
+
 }
