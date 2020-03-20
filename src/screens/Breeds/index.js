@@ -6,6 +6,7 @@ import Header from '../../Header'
 import Breeds from './Breeds'
 import DetailsBreed from './DetailsBreed'
 
+
 const Index = props => {
 
     console.log(props)
@@ -15,8 +16,7 @@ const Index = props => {
         <div className='div'>
             <Header />
             <Route exact path={`/breeds`} component={Breeds} />
-            <Route exact path={`${props.match.path}/:id/details`} component={DetailsBreed} />
-            
+            <Route path={`${props.match.path}/:id/details`} component={DetailsBreed} />
         </div>
     )
 }

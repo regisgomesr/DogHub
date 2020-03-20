@@ -19,7 +19,8 @@ export const {
 
     createAdoptionRequest: ['adoption'],
     createAdoptionSuccess: ['adoption'],
-    createAdoptionFailure: ['error']
+    createAdoptionFailure: ['error'],
+    createAdoptionReset: null,
 
  
 

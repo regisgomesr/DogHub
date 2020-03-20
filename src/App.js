@@ -22,7 +22,7 @@ class App extends Component {
           <Container>
             <Route exact path='/' component={Home} />
             <Route path='/breeds' component={Breeds} />
-            <Route path='/adoptions' component={Adoptions} />
+            <Route exact path='/adoptions' component={Adoptions} />
           </Container>
         </Router>
       </Provider>

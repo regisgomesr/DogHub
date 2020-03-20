@@ -1,5 +1,5 @@
 {
-	"breeds": [
+  "breeds": [
     {
       "id": 6,
       "name": "Akita",
@@ -8,12 +8,18 @@
       "bred_for": "Hunting bears",
       "breed_group": "Working",
       "temperament": "Docile, Alert, Responsive, Dignified, Composed, Friendly, Receptive, Faithful, Courageous",
-      "weight": [{ 
-        "imperial": "65 - 115 lbs", 
-        "metric": "29 - 52 kgs" }],
-      "height": [{
-        "imperial": "24 - 28 inches at the withers",
-        "metric": "61 - 71 cm at the withers"}]
+      "weight": [
+        {
+          "imperial": "65 - 115 lbs",
+          "metric": "29 - 52 kgs"
+        }
+      ],
+      "height": [
+        {
+          "imperial": "24 - 28 inches at the withers",
+          "metric": "61 - 71 cm at the withers"
+        }
+      ]
     },
     {
       "id": 16,
@@ -23,12 +29,18 @@
       "bred_for": "",
       "breed_group": "Terrier",
       "temperament": "Tenacious, Friendly, Devoted, Loyal, Attentive, Courageous",
-      "weight": [{ 
-        "imperial": "50 - 60 lbs", 
-        "metric": "23 - 27 kgs" }],
-      "height": [{
-        "imperial": "17 - 19 inches at the withers",
-        "metric": "43 - 48 cm at the withers"}]
+      "weight": [
+        {
+          "imperial": "50 - 60 lbs",
+          "metric": "23 - 27 kgs"
+        }
+      ],
+      "height": [
+        {
+          "imperial": "17 - 19 inches at the withers",
+          "metric": "43 - 48 cm at the withers"
+        }
+      ]
     },
     {
       "id": 81,
@@ -38,12 +50,18 @@
       "bred_for": "Guardian, cart pulling, hunting",
       "breed_group": "Non-Sporting",
       "temperament": "Aloof, Loyal, Independent, Quiet",
-      "weight": [{ 
-        "imperial": "40 - 70 lbs", 
-        "metric": "18 - 32 kgs" }],
-      "height": [{
-        "imperial": "17 - 20 inches at the withers",
-        "metric": "43 - 51 cm at the withers"}]
+      "weight": [
+        {
+          "imperial": "40 - 70 lbs",
+          "metric": "18 - 32 kgs"
+        }
+      ],
+      "height": [
+        {
+          "imperial": "17 - 20 inches at the withers",
+          "metric": "43 - 51 cm at the withers"
+        }
+      ]
     },
     {
       "id": 121,
@@ -53,21 +71,55 @@
       "bred_for": "Retrieving",
       "breed_group": "Sporting",
       "temperament": "Intelligent, Kind, Reliable, Friendly, Trustworthy, Confident",
-      "weight": [{ 
-        "imperial": "55 - 75 lbs", 
-        "metric": "25 - 34 kgs" }],
-      "height": [{
-        "imperial": "21.5 - 24 inches at the withers",
-        "metric": "55 - 61 cm at the withers"}]
+      "weight": [
+        {
+          "imperial": "55 - 75 lbs",
+          "metric": "25 - 34 kgs"
+        }
+      ],
+      "height": [
+        {
+          "imperial": "21.5 - 24 inches at the withers",
+          "metric": "55 - 61 cm at the withers"
+        }
+      ]
     }
   ],
-
   "adoptions": [
     {
       "id": 121,
       "name": "Golden Retriever",
       "image": "https://i.imgur.com/BZH1Wkt.jpg"
+    },
+    {
+      "id": 81,
+      "name": "Chow Chow",
+      "image": "https://i.imgur.com/87pnyIb.jpg"
+    },
+    {
+      "image": "https://i.imgur.com/xL5rBq4.jpg",
+      "name": "Akita",
+      "id": 122
+    },
+    {
+      "image": "https://i.imgur.com/XxPXLLM.jpg",
+      "name": "American Staffordshire Terrier",
+      "id": 123
+    },
+    {
+      "image": "https://i.imgur.com/xL5rBq4.jpg",
+      "name": "Akita",
+      "id": 124
+    },
+    {
+      "image": "https://i.imgur.com/87pnyIb.jpg",
+      "name": "Chow Chow",
+      "id": 125
+    },
+    {
+      "image": "https://i.imgur.com/BZH1Wkt.jpg",
+      "name": "Golden Retriever",
+      "id": 126
     }
   ]
-
 }

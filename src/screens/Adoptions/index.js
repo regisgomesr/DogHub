@@ -13,13 +13,13 @@ class Adoptions extends Component {
         this.props.load()
     }
 
-    renderAdoptions = adoption => {
+    renderAdoptions = (adoption) => {
         return(
-            <div className="p-3 my-2 rounded">
+            <div className="p-3 my-2 rounded" key={adoption.id}>
                 <Toast className='toast'>
 
                     <ToastBody className='toastBody'>
-                        <img src={adoption.image} alt="Image" height="60" width="60"/>
+                        <img src={adoption.image} alt="Dog" height="60" width="60"/>
                         <h4>{adoption.name}</h4>
                         <MdClear className='mdClear' size={24} color='#000' opacity='0.3'/>
                     </ToastBody>
@@ -32,6 +32,8 @@ class Adoptions extends Component {
 
     render() {
         return(
+
+            
         
             <div className='adoption-container'>
 

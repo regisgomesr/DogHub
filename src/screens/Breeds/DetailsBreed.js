@@ -20,12 +20,10 @@ class DetailsBreed extends Component{
 
     componentDidMount() {
         this.props.load(this.props.match.params.id)
-        
+        this.props.reset()
     }
 
     static getDerivedStateFromProps(newProps, prevState){
-
-        console.log(newProps, prevState)
 
         if(newProps.breeds && newProps.breeds.breed  &&
             (prevState.name === undefined || prevState.name === '')) {
@@ -68,6 +66,11 @@ class DetailsBreed extends Component{
 
     render(){
 
+        console.log(this.props.adoptions)
+
+        if(this.props.adoptions.saved) {
+            return <Redirect to='/adoptions' />
+        }
 
         return(
             <div className='detalhes-container'>
@@ -91,7 +94,7 @@ class DetailsBreed extends Component{
                                         <Button className='CardButton' disabled>{this.state.temperament}</Button>
                                         <CardSubtitle className='subTitle'> - Age {this.state.life_span}</CardSubtitle>
                                         <CardText> - Group {this.state.breed_group}</CardText>
-                                        <Button href='/adoptions' color='secondary' className='btn'>Adotar</Button>
+                                        <Button onClick={this.handleSave} color='secondary' className='btn'>Adotar</Button>
                                     </CardBody>
                                 </Card>
                             </div>
@@ -113,7 +116,8 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     return {
         load: id => dispatch(ActionCreators.getBreedRequest(id)),
-        create: (adoption) => dispatch(ActionCreators.createAdoptionRequest(adoption))
+        create: (adoption) => dispatch(ActionCreators.createAdoptionRequest(adoption)),
+        reset: () => dispatch(ActionCreators.createAdoptionReset())
     }
 }
 

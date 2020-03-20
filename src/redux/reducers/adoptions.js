@@ -38,6 +38,15 @@ export const createAdoptionFailure = (state = INITIAL_STATE, action) => {
     }
 }
 
+export const createAdoptionReset = (state = INITIAL_STATE, action) => {
+    return {
+        ...state,
+        isSaving: false,
+        saved: false,
+        error: ''
+    }
+}
+
 export const getAdoptionsRequest = (state = INITIAL_STATE, action) => {
     return {
         ...state,
@@ -63,6 +72,7 @@ export const HANDLERS = {
     [Types.CREATE_ADOPTION_REQUEST]: createAdoptionRequest,
     [Types.CREATE_ADOPTION_SUCCESS]: createAdoptionSuccess,
     [Types.CREATE_ADOPTION_FAILURE]: createAdoptionFailure,
+    [Types.CREATE_ADOPTION_RESET]: createAdoptionReset,
 
     [Types.GET_ADOPTIONS_REQUEST]: getAdoptionsRequest,
     [Types.GET_ADOPTIONS_SUCCESS]: getAdoptionsSuccess,
