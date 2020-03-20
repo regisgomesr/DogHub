@@ -120,6 +120,11 @@
       "image": "https://i.imgur.com/BZH1Wkt.jpg",
       "name": "Golden Retriever",
       "id": 126
+    },
+    {
+      "image": "https://i.imgur.com/87pnyIb.jpg",
+      "name": "Chow Chow",
+      "id": 127
     }
   ]
 }

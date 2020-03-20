@@ -15,7 +15,8 @@ class DetailsBreed extends Component{
         temperament: '',
         image: '',
         life_span: '',
-        breed_group: ''
+        breed_group: '',
+        weight: ''
     }
 
     componentDidMount() {
@@ -24,6 +25,8 @@ class DetailsBreed extends Component{
     }
 
     static getDerivedStateFromProps(newProps, prevState){
+
+        console.log(newProps, prevState)
 
         if(newProps.breeds && newProps.breeds.breed  &&
             (prevState.name === undefined || prevState.name === '')) {
@@ -48,6 +51,10 @@ class DetailsBreed extends Component{
 
             if(newValue.breed_group !== prevState.breed_group){
                 breed.breed_group = newProps.breeds.breed.breed_group
+            }
+
+            if(newValue.weight !== prevState.weight){
+                breed.weight = newProps.breeds.breed.weight
             }
 
             return breed
@@ -94,6 +101,7 @@ class DetailsBreed extends Component{
                                         <Button className='CardButton' disabled>{this.state.temperament}</Button>
                                         <CardSubtitle className='subTitle'> - Age {this.state.life_span}</CardSubtitle>
                                         <CardText> - Group {this.state.breed_group}</CardText>
+                                        <CardText> - weight </CardText>
                                         <Button onClick={this.handleSave} color='secondary' className='btn'>Adotar</Button>
                                     </CardBody>
                                 </Card>
