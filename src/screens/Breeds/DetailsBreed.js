@@ -16,7 +16,8 @@ class DetailsBreed extends Component{
         image: '',
         life_span: '',
         breed_group: '',
-        weight: ''
+        weight: '',
+        height: ''
     }
 
     componentDidMount() {
@@ -53,8 +54,18 @@ class DetailsBreed extends Component{
                 breed.breed_group = newProps.breeds.breed.breed_group
             }
 
-            if(newValue.weight !== prevState.weight){
-                breed.weight = newProps.breeds.breed.weight
+            if (newValue.weight !== prevState.weight) {
+                const weight = newProps.breeds.breed.weight
+                if (weight) {
+                    breed.weight = weight[0].metric
+                }
+            }
+
+            if (newValue.height !== prevState.height) {
+                const height = newProps.breeds.breed.height
+                if (height) {
+                    breed.height = height[0].metric
+                }
             }
 
             return breed
@@ -100,8 +111,9 @@ class DetailsBreed extends Component{
                                         <h5 className='CardTitle'>{this.state.name}</h5>
                                         <Button className='CardButton' disabled>{this.state.temperament}</Button>
                                         <CardSubtitle className='subTitle'> - Age {this.state.life_span}</CardSubtitle>
-                                        <CardText> - Group {this.state.breed_group}</CardText>
-                                        <CardText> - weight </CardText>
+                                        <CardText className='cardText'> - Group {this.state.breed_group}</CardText>
+                                        <CardText className='cardText'> - Weight {this.state.weight}</CardText>
+                                        <CardText className='cardText'> - Height {this.state.height}</CardText>
                                         <Button onClick={this.handleSave} color='secondary' className='btn'>Adotar</Button>
                                     </CardBody>
                                 </Card>

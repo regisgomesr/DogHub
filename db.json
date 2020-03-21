@@ -87,44 +87,9 @@
   ],
   "adoptions": [
     {
-      "id": 121,
-      "name": "Golden Retriever",
-      "image": "https://i.imgur.com/BZH1Wkt.jpg"
-    },
-    {
-      "id": 81,
-      "name": "Chow Chow",
-      "image": "https://i.imgur.com/87pnyIb.jpg"
-    },
-    {
       "image": "https://i.imgur.com/xL5rBq4.jpg",
       "name": "Akita",
-      "id": 122
-    },
-    {
-      "image": "https://i.imgur.com/XxPXLLM.jpg",
-      "name": "American Staffordshire Terrier",
-      "id": 123
-    },
-    {
-      "image": "https://i.imgur.com/xL5rBq4.jpg",
-      "name": "Akita",
-      "id": 124
-    },
-    {
-      "image": "https://i.imgur.com/87pnyIb.jpg",
-      "name": "Chow Chow",
-      "id": 125
-    },
-    {
-      "image": "https://i.imgur.com/BZH1Wkt.jpg",
-      "name": "Golden Retriever",
-      "id": 126
-    },
-    {
-      "image": "https://i.imgur.com/87pnyIb.jpg",
-      "name": "Chow Chow",
-      "id": 127
+      "id": 1
     }
   ]
 }
