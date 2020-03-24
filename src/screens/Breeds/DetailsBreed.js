@@ -5,7 +5,6 @@ import {
 import ActionCreators from '../../redux/actionCreators'
 import { connect } from 'react-redux'
 import { Redirect } from 'react-router-dom'
-
 import './DetailsBreed.css'
 
 class DetailsBreed extends Component{
@@ -102,7 +101,7 @@ class DetailsBreed extends Component{
                     <Container fluid className='container-fluid d-flex justify-content-center'>
                         <h3>Detalhes</h3>
                         <Row>
-                            <div className="div-card">
+                            <div className='div-card'>
                                 <Card className='card-container'>
                                     <div className='overflow'>
                                         <CardImg className='card-img' top width='100%' src={this.state.image} alt="Card image" />

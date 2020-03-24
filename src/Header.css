@@ -1,4 +1,3 @@
-
 header {
     width: 100%;
     height: 80px;
@@ -15,14 +14,11 @@ header .container-header {
     align-items: center;
     justify-content: space-between;
     color: #FFF;
-
 }
 
 header .logo {
     width: 180px;
-    
     padding: 15px 0;
-  
 }
 
 header .menu {
@@ -41,7 +37,6 @@ header .menu a, .logo a {
     text-decoration: none;
     color: white;
 }
-
 
 header .logo a{
     font-size: 2.25em;
@@ -67,7 +62,6 @@ nav {
   height: 5px;
   width: 100%;
   margin: 6px auto;
-
   transition-duration: 0.3s;
 }
 

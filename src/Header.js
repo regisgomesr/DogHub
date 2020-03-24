@@ -13,9 +13,9 @@ class Header extends Component {
     
     menuToggle() {
 
-        const menuSection = document.querySelector(".menu-section")
+        const menuSection = document.querySelector('.menu-section')
 
-        document.body.style.overflow = this.state.showMe ? "hidden" : "initial"
+        document.body.style.overflow = this.state.showMe ? 'hidden' : 'initial'
 
         menuSection.classList.toggle("on", this.state.showMe)
 
@@ -28,15 +28,15 @@ class Header extends Component {
     render() {
         return(
             <header>
-                <div className="container-header">
+                <div className='container-header'>
                     <div className='logo'>
                         <a href='/'><span>Dog</span>Hub</a>
                     </div>
-                        <div className="menu-section">
+                        <div className='menu-section'>
                             <div className='menu-toggle' onClick={ () => this.menuToggle() }>
-                                <div className="one"></div>
-                                <div className="two"></div>
-                                <div className="three"></div>
+                                <div className='one'></div>
+                                <div className='two'></div>
+                                <div className='three'></div>
                             </div>
                             <nav>
                                 <ul>

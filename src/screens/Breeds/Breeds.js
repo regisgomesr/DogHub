@@ -5,7 +5,6 @@ import { connect } from 'react-redux'
 import {   
     Card, CardImg, CardBody, Container, Row
     } from 'reactstrap'
-
 import './Breeds.css'
 
 class Breeds extends Component{
@@ -16,11 +15,11 @@ class Breeds extends Component{
 
     renderBreeds = breed => {
         return(
-            <div className="div-card" key={breed.id}>
+            <div className='div-card' key={breed.id}>
 
                     <Card className='card-container'>
                         <div className='overflow'>
-                            <CardImg className='card-img' top width='100%' src={breed.image} alt="Card image" />
+                            <CardImg className='card-img' top width='100%' src={breed.image} alt='Card image' />
                         </div>
                         <CardBody>
                             <h5 className='CardTitle'>{breed.name}</h5>

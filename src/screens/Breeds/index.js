@@ -9,8 +9,6 @@ import DetailsBreed from './DetailsBreed'
 
 const Index = props => {
 
-    console.log(props)
-
     return(
 
         <div>
