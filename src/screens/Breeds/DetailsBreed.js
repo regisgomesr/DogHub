@@ -100,7 +100,7 @@ class DetailsBreed extends Component{
 
                 { !this.props.breeds.isLoading &&
                     <Container fluid className='container-fluid d-flex justify-content-center'>
-                        <h1>Detalhes</h1>
+                        <h3>Detalhes</h3>
                         <Row>
                             <div className="div-card">
                                 <Card className='card-container'>
@@ -114,12 +114,12 @@ class DetailsBreed extends Component{
                                         <CardText className='cardText'> - Group {this.state.breed_group}</CardText>
                                         <CardText className='cardText'> - Weight {this.state.weight}</CardText>
                                         <CardText className='cardText'> - Height {this.state.height}</CardText>
-                                        <Button onClick={this.handleSave} color='secondary' className='btn'>Adotar</Button>
+                                        <Button outline color='secondary' className='btn' onClick={this.handleSave}>ADOTAR</Button>
                                     </CardBody>
                                 </Card>
                             </div>
                         </Row>
-                    </Container>        
+                    </Container>
                 }
             </div>
         )

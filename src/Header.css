@@ -1,56 +1,31 @@
-* {
-    margin: 0;
-    padding: 0;
-    outline: 0;
-    box-sizing: border-box;
-    border: none;
-    font-size: 100%;
-}
 
-html, body, #root {
-    width: 100%;
-    height: 100%;
-}
-
-body {
-    background: #f5f5f5;
-}
-
-body, input, button {
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-a {
-    text-decoration: none;
-}
-
-ul {
-    list-style: none;
-}
-
-img {
-    display: block;
-    max-width: 100%;
-}
-
-
-.header {
+header {
     width: 100%;
     height: 80px;
-    margin-top: 0;
     background: #8B8989;
-    border-radius: 2px;
-    border-bottom: 2px solid rgba(0, 0, 0, 0.05);
-    color: #FFF;
+    border-bottom: 2px solid rgba(0,0,0, 0.3);
     position: fixed;
-    display: flex;
-    flex-wrap: wrap;
-    padding: 3% 4%;
-    justify-content: space-between;
-    z-index: 2;
+    z-index: 3;
 }
 
-.menu {
+header .container-header {
+    width: 90%;
+    display: flex;
+    margin: auto;
+    align-items: center;
+    justify-content: space-between;
+    color: #FFF;
+
+}
+
+header .logo {
+    width: 180px;
+    
+    padding: 15px 0;
+  
+}
+
+header .menu {
     width: 100%;
     height: 100%;
     color: #FFF;
@@ -62,64 +37,102 @@ img {
     left: 0;
 }
 
-.header a {
+header .menu a, .logo a {
+    text-decoration: none;
     color: white;
 }
 
-.menu-logo {
-    float: left;
-    margin-top: 0;
-  
-}
 
-.menu-logo a{
+header .logo a{
     font-size: 2.25em;
     font-weight: bold;
     margin: 0 10px;
     text-transform: uppercase;
 }
 
-.menu-logo span {
+header .logo span {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     color: #EEE9E9;
     font-weight: lighter;
 }
 
-.btn-menu {
-    width: 56px;
-    height: 56px;
-    text-align: center;
-    color: #FFF;
-    border-radius: 56px;
+nav {
+    display: none;
+}
+
+.one,
+.two,
+.three {
+  background-color: #fff;
+  height: 5px;
+  width: 100%;
+  margin: 6px auto;
+
+  transition-duration: 0.3s;
+}
+
+.menu-toggle {
+    width: 40px;
+    height: 33px;
+    margin-right: 0;
     cursor: pointer;
-    background: linear-gradient(to right, #000, #FFF);
+  }
+
+/* fullscreen */
+.menu-section.on {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100vw;
+    height: 100vh;
+
+    background-color: rgba(0,0,0,0.9);
+
+    z-index: 10;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.btn-close {
-    font-size: 3em;
-    color: #FFF;
-    float: right;
-    cursor: pointer;
-    margin-top: 3%;
-    margin-right: 3%;
-}
+.menu-section.on nav {
+    display: block;
+  }
 
-.menu ul {
-    width: 100%;
-    float: left;
+.menu-section.on .menu-toggle {
+    position: absolute;
+    right: 5%;
+    top: 4%;
+  }
+
+  .menu-section.on .menu-toggle .one {
+    transform: rotate(45deg) translate(9px, 7px);
+  }
+
+  .menu-section.on .menu-toggle .two {
+    opacity: 0;
+  }
+
+  .menu-section.on .menu-toggle .three {
+    transform: rotate(-45deg) translate(8px, -7px);
+  }
+
+  .menu-section.on nav ul {
     text-align: center;
-}
+    display: block;
+  }
 
-.menu li {
-    padding: 1.5%;
-}
+  .menu-section.on nav ul a {
+    transition-duration: 0.5s;
+    font-size: 30px;
+    line-height: 40px;
+    display: block;
+    color: white;
+    text-decoration: none;
+    margin-bottom: 20px;
+  }
 
-.menu li a {
-    font-size: 2em;
-    padding: 1.5% 3%;
-
-}
-
-.menu li a:hover {
-    border: 1px solid #da6709;
-}
+  .menu-section.on nav ul a:hover {
+    background: rgba(255,255,255, 0.15);
+  }

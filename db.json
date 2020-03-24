@@ -90,6 +90,26 @@
       "image": "https://i.imgur.com/xL5rBq4.jpg",
       "name": "Akita",
       "id": 1
+    },
+    {
+      "image": "https://i.imgur.com/87pnyIb.jpg",
+      "name": "Chow Chow",
+      "id": 2
+    },
+    {
+      "image": "https://i.imgur.com/XxPXLLM.jpg",
+      "name": "American Staffordshire Terrier",
+      "id": 3
+    },
+    {
+      "image": "https://i.imgur.com/BZH1Wkt.jpg",
+      "name": "Golden Retriever",
+      "id": 4
+    },
+    {
+      "image": "https://i.imgur.com/87pnyIb.jpg",
+      "name": "Chow Chow",
+      "id": 5
     }
   ]
 }

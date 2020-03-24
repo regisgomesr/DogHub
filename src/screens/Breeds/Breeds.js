@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import ActionCreators from '../../redux/actionCreators'
 import { connect } from 'react-redux'
 import {   
-    Card, CardImg, CardBody,  Button, Container, Row
+    Card, CardImg, CardBody, Container, Row
     } from 'reactstrap'
 
 import './Breeds.css'
@@ -24,9 +24,7 @@ class Breeds extends Component{
                         </div>
                         <CardBody>
                             <h5 className='CardTitle'>{breed.name}</h5>
-                            <Button className='CardButton' disabled>{breed.temperament}</Button>
-                            <br/>
-                            <Link className='btn btn-outline-success' to={`breeds/${breed.id}/details`}>Detalhes</Link>
+                            <Link className='btn btn-outline-success' to={`breeds/${breed.id}/details`}>DETALHES</Link>
                         </CardBody>
                     </Card>
                 
@@ -52,7 +50,7 @@ class Breeds extends Component{
                 { !this.props.breeds.isLoading && this.props.breeds.data.length > 0 &&
                     <Container fluid className='container-fluid d-flex justify-content-center'>
 
-                        <h1>Para adoção</h1>
+                        <h3>Para adoção</h3>
                         <Row>
                             { this.props.breeds.data.map(this.renderBreeds) }
                         </Row>
