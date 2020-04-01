@@ -33,7 +33,10 @@ Aplicação ReactJS, Redux, ReduxSagas, Responsivo Mobile First consumindo uma A
 
 0) Clone o repositório;<br>
 1) Baixe as dependências;<br>
-2) Execute o script START;<br>
+2) Execute os scripts;<br>
+### `json-server --watch db.json`<br>
+### `yarn start`<br>
+### `Apertar Y (yes) e esperar abrir a aba.`<br>
 3) Acesse a aplicação em http://localhost:3000;<br>
 
 ## Licença
